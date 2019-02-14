@@ -1,0 +1,27 @@
+{
+  "usuarios": [{
+    "id": 1,
+    "nombre": "Nahuel",
+    "apellido": "Roig",
+    "profesion": "Programador",
+    "sexo": "M"
+  }, {
+    "id": 2,
+    "nombre": "Damian",
+    "apellido": "Roig",
+    "profesion": "Programador",
+    "sexo": "M"
+  }, {
+    "id": 3,
+    "nombre": "Mariano",
+    "apellido": "Roig",
+    "profesion": "Empleado",
+    "sexo": "M"
+  }, {
+    "id": 4,
+    "nombre": "Gisela",
+    "apellido": "Bosch",
+    "profesion": "Analista",
+    "sexo": "F"
+  }]
+}
