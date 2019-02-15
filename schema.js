@@ -4,9 +4,10 @@ import {
 
 export default gql `
 type Query {
-  hola: String,
+  ping: String,
   usuario(id: Int!): Usuario
-  usuarios(sexo: String): [Usuario]
+  usuarios: [Usuario]
+  usuariosXSexo(sexo: String!): [Usuario]
 }
 
 type Mutation {

@@ -1,31 +1,26 @@
 // Some fake data
 import {
   usuarios
-} from './bd';
+} from './data';
 
 // The resolvers
 module.exports = {
   Query: {
-    hola: () => 'Mundo',
-    usuarios: (args) => {
-      if (args.sexo) {
-        return usuarios.filter(usuario => {
-          return usuario.sexo === args.sexo;
-        });
-      } else {
-        return usuarios;
-      }
-    },
-    usuario: (args) => {
-      console.log('entro a usuario');
-      console.log(args);
+    ping: () => 'Está todo ok!!!',
+    usuarios: () => usuarios,
+    usuario: (_, args) => {
       return usuarios.filter(usuario => {
         return usuario.id === args.id;
       })[0];
+    },
+    usuariosXSexo: (_, args) => {
+      return usuarios.filter(usuario => {
+        return usuario.sexo === args.sexo;
+      });
     }
   },
   Mutation: {
-    modificarUsuario: (args) => usuarios.map(usuario => {
+    modificarUsuario: (_, args) => usuarios.map(usuario => {
       if (args.id === usuario.id) {
         usuario.nombre = args.nombre || usuario.nombre;
         usuario.apellido = args.apellido || usuario.apellido;
